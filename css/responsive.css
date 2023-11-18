@@ -1,0 +1,1266 @@
+@media screen and (min-width:1441px) {
+    .Inspiration-content .instimages li img {
+        height: 300px;
+    }
+
+    .Inspiration-content .instimages li:nth-child(even) img {
+        height: 400px;
+    }
+}
+
+/* Small LCD Media Query */
+
+@media screen and (max-width:1023.98px) {
+
+    .Inspiration-content .instimages li img,
+    .Inspiration-content .instimages li:nth-child(even) img {
+        height: auto;
+    }
+
+    .circleimage .circle-group img {
+        display: none;
+    }
+
+    .circleimage {
+        margin: 0 -2rem;
+    }
+
+    .container-fluid {
+        padding: 0px 40px;
+    }
+
+    .newlogo-Wrapper {
+        width: 420px;
+    }
+
+    .new-hover-logo img {
+        max-width: 70px;
+        object-fit: contain;
+    }
+
+    .new-hover-logo img:nth-child(2) {
+        max-width: 60px;
+    }
+
+    .new-hover-logo img:nth-child(3) {
+        max-width: 240px;
+    }
+
+    .tooltp {
+        margin-left: 2rem;
+    }
+
+    .tooltp.tooltp2 {
+        margin-left: -2rem;
+    }
+
+    .tooltp.tooltp3 {
+        width: 200px;
+    }
+}
+
+@media (max-width:992px) {
+    .oserh-lover-card {
+        display: none;
+    }
+
+    .product-swiper {
+        background-color: var(--secondary);
+    }
+
+    .product-swiper .swiper-pagination {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .prodetailCard .cardpara p {
+        font-size: 15px;
+    }
+
+    .pro-body .pro-para {
+        color: var(--white);
+        font-size: 14px;
+        padding-top: 17px;
+    }
+
+    .pro-body h3 {
+        font-size: 18px;
+        color: #6FCFEB;
+        padding-top: 17px;
+    }
+
+    .pro-body .pro-para1 {
+        color: var(--white);
+        font-size: 14px;
+    }
+
+    .oserh-lover {
+        height: auto;
+    }
+
+    .oserh-lover h3 {
+        font-size: 25px;
+        padding-bottom: 0px;
+    }
+
+    .swiper.mySwiper3.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+        padding-bottom: 50px;
+    }
+
+    .oserh-lover.web {
+        display: block;
+    }
+
+    .detail-side {
+        display: none;
+    }
+
+    .seller-card.proDetailImg figure {
+        height: auto;
+    }
+
+    .product-panel-images figure {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .product-panel .product-panel-images figure img {
+        margin: 0;
+        max-width: 170px;
+        width: calc(25% - 8px);
+        height: auto;
+    }
+
+    .productcontent {
+        flex-direction: column;
+    }
+
+    .product-panel-images {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .produuct-imgdetail .swiper-pagination {
+        display: block;
+    }
+
+    .swiper.produuct-imgdetail.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+        padding-bottom: 50px;
+    }
+
+    .details .detail-head {
+        padding: 0 0px;
+    }
+
+    .details .proDetailImg .promainImg img {
+        min-height: 385px;
+    }
+
+    .details .proDetailImg .product-badge li {
+        width: 75px;
+        height: 75px;
+    }
+
+    .details .proDetailImg .product-badge li p {
+        font-size: 14px;
+    }
+
+    .we-care {
+        padding: 20px 0 20px;
+    }
+
+    .beauty-content {
+        margin-top: 0px;
+        padding: 25px;
+    }
+
+    .beautyImg {
+        margin-top: 20px;
+    }
+
+    .we-care .wecare-heading h1 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .we-care .wecare-heading p {
+        font-size: 12px;
+    }
+
+    .beauty-content h3 {
+        font-size: 25px;
+    }
+
+    .beauty-content p {
+        font-size: 12px;
+        padding-top: 15px;
+    }
+
+    .login-bg,
+    .login-banner {
+        flex: none;
+        width: 100%;
+    }
+
+    .login {
+        flex-direction: column-reverse;
+    }
+    .login {
+        padding: 75px 0 0;
+    }
+    .login-content {
+        padding: 22px;
+    }
+    .login-content .login-heading h1 {
+        font-size: 30px;
+    }
+    .login-content .login-heading p {
+        font-size: 13px;
+        margin: 5px 0 11px;
+    }
+    .login-content .login-input .form-control {
+        padding: 14px;
+        font-size: 13px;
+    }
+    .login-input a {
+        margin-top: 12px;
+        font-size: 14px;
+
+    }
+    .login-button>:nth-child(1) {
+        padding: 10px !important;
+        height: 50px;
+        font-size: 15px;
+    }
+    .login-button>:nth-child(2) {
+        font-size: 14px;
+    }
+    .login-button>:nth-child(3) {
+        font-size: 14px;
+    }
+    .login-button .sign, .login-button a {
+        font-size: 14px;
+    }
+    .cartnav-img{
+        display: none;
+    }
+    section.best-seller.cart-product::before {
+      
+        display: none;
+    }
+    .cart-product{
+        display: none;
+    }
+    .contact {
+        /* padding: 0 0 90px; */
+        background: url(../images/contactwave.png) no-repeat;
+        padding: 3.875rem 0 2rem;
+        margin-top: -3rem;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        z-index: 1;
+        position: relative;
+        background-size: contain;
+    }
+    .mobile-card{
+        display: block;
+        background: none;
+        
+    }
+    .mobile-card .seller-card .seller-body .btn {
+        padding: 12px 20px;
+        width: 100%;
+    }
+    .mobile-card{
+        margin-top: 10px;
+    }
+    .mobile-card .seller-head h1 {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+    .thankcontent {
+        /* padding: 0 0 90px; */
+        background: url('../images/thankwave.png') no-repeat;
+        padding: 13.875rem 0 5rem;
+        margin-top: -6rem;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        z-index: 1;
+        position: relative;
+    }
+}
+
+
+/*Large Mobile Media Query */
+
+@media screen and (max-width:767.98px) {
+
+    .container-fluid {
+        padding: 0px 12px;
+    }
+
+    footer .container-fluid {
+        padding: 0 30px;
+    }
+
+    .top-bar {
+        padding: 8px 0;
+    }
+
+    .top-bar p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-height: 1.2;
+        max-height: 40px;
+    }
+
+    .offcanvas-body .accordion-body a {
+        color: var(--white);
+        font-family: 'Eina2';
+        font-size: 14px;
+    }
+
+    .foot-mobilenav .oserth-email {
+        color: var(--white);
+        font-family: 'Eina2';
+        font-size: 18px;
+        letter-spacing: 1.8px;
+    }
+
+    .foot-mobilenav .social-link a {
+        margin-right: 15px;
+        font-size: 18px;
+        color: var(--white);
+    }
+
+    .main-navigation {
+        padding: 10px 0;
+        border: 0;
+    }
+
+    .second-navigation {
+        /* border-bottom: 1px solid #CCCCCC; */
+        /* position: absolute; */
+        right: 0;
+        left: 0;
+        top: 0;
+        /* z-index: -1; */
+        position: fixed;
+        background: #FFF;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+    }
+
+    .navbar-toggler {
+        display: inline-block;
+        color: #55555599;
+        padding: 10px;
+        font-size: 1.25rem;
+    }
+
+
+    .more-links .mobile-logo {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .more-links .mobile-logo img {
+        border-radius: 0;
+        height: 60px;
+    }
+
+    .more-links i {
+        color: #55555599;
+    }
+
+    .main-navigation .container-fluid {
+        align-items: flex-start;
+        padding: 0 5px;
+    }
+
+    .mobile-logo1 img {
+        width: 100%;
+        height: 25px !important;
+        border-radius: 0;
+        object-fit: contain;
+    }
+
+    .main-navigation ul.more-links {
+        gap: 5px;
+        width: 90%;
+        align-items: flex-start;
+    }
+
+    .main-navigation ul.more-links li.dropdown,
+    a.navbar-brand,
+    li.searchbtn-menu {
+        display: none;
+    }
+
+    .main-hero .text-caption {
+        margin-top: -250px;
+    }
+
+
+    .about-section {
+        padding: 3.875rem 0 3.875rem;
+    }
+
+    .about-section .essence-head h1 {
+        font-size: 27px;
+    }
+
+    .about-section p {
+        font-size: 14px;
+    }
+
+    .about-section .essence-friendly {
+        text-align: center;
+    }
+
+    .about-section .essence-friendly img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about-section .essence-friendly h3 {
+        padding: 10px 0;
+        font-size: 18px;
+    }
+
+    .essence-friendly .friendly-para {
+        font-size: 10px;
+    }
+
+
+    .vegan-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .vegan-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .vegan-content p {
+        font-size: 1.2rem;
+    }
+
+    .vegan-content a {
+        padding: 20px;
+        letter-spacing: 1px;
+        font-size: 1rem;
+    }
+
+    .cta-section .wave-line {
+        bottom: 30px;
+    }
+
+    .our-collection {
+        display: none;
+    }
+
+    .our-collection-mobile {
+        display: block;
+        margin-top: 0;
+    }
+
+    .our-collection-mobile .collection-head h1 {
+        font-size: 30px;
+    }
+
+    .our-collection-mobile .collection-head p {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .our-collection-mobile .btn {
+        width: 90%;
+    }
+
+    .our-brand {
+        padding: 25px 0 25px;
+    }
+
+    .our-brand .our-heading h1 {
+        font-size: 40px;
+        max-width: 500px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .our-brand .brand-image img {
+        height: 280px;
+    }
+
+    .our-brand .our-heading1 {
+        font-family: 'Eina2-light';
+        padding: 17px 0px;
+        text-align: center;
+    }
+
+    .our-brand .our-heading1 h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .our-brand .our-heading1 p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .our-brand .our-heading1 a {
+        padding: 15px 30px;
+    }
+
+    .Inspiration .head h1 {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    .Inspiration-content .instimages {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .Inspiration-content .instimages li {
+        width: 46%;
+    }
+
+    .Inspiration-content .instimages li img,
+    .Inspiration-content .instimages li:nth-child(even) img {
+        aspect-ratio: 1/1;
+    }
+
+    .circleimage {
+        margin: 0 -3rem;
+    }
+
+    .product {
+        height: 435px;
+    }
+
+    .product-content {
+        padding: 1.5rem 0 0rem;
+        /* background: url(../images/wave.png); */
+        margin-top: 0rem;
+        z-index: 2;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        z-index: 2;
+    }
+
+    .about-head {
+        display: none !important;
+    }
+
+    .about-mobile {
+        display: block;
+        margin-top: 105px;
+        position: relative;
+    }
+
+    .head-mobile {
+        position: absolute;
+        top: 35px;
+    }
+
+    .about-heading h1 {
+        font-size: 40px !important;
+    }
+
+    .product-content .head-mobile i {
+        color: #555;
+    }
+
+    .details .detail-head i {
+        color: #555;
+    }
+
+    .about-content .about-oserth p {
+        font-size: 15px;
+        padding: 0 0px 0 0px;
+    }
+
+    .about-card .our-ocean h3 {
+        font-size: 24px;
+    }
+
+    .about-card .our-ocean .collect {
+        padding: 6px 0 6px;
+        font-size: 15px;
+    }
+
+    .about-card .our-ocean .inspire {
+        font-size: 12px;
+    }
+
+    .web-cart {
+        display: none;
+    }
+
+    .mob-cart {
+        display: inline-block;
+    }
+
+    .about-content .about-card {
+        margin: 8px 0 14px;
+        padding: 20px;
+    }
+
+    .our-body-img img {
+        height: 512px;
+        margin-top: -52%;
+        position: relative;
+        z-index: -1;
+        object-fit: cover;
+    }
+
+    .our-body {
+        padding: 30px;
+    }
+
+    .product-panel.col-7 {
+        width: 100%;
+    }
+
+    section.productBGsection {
+        flex-direction: column-reverse;
+    }
+
+    .productcontent {
+        flex-direction: column-reverse;
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    .product-panel .product-panel-text {
+        padding: 20px;
+        gap: 5px;
+    }
+
+    .proPanelBg {
+        flex: none;
+        height: 400px;
+    }
+
+    .essence-friendly.essence-friendly1 {
+        width: 40%;
+        display: inline-block;
+        margin-bottom: 24px;
+    }
+
+    .vegan-friendly .col-lg-6.d-flex.justify-content-between.text-center {
+        flex-wrap: wrap;
+        display: contents !important;
+        margin: auto;
+    }
+
+    .vegan-friendly .row {
+        display: block;
+        text-align: center;
+    }
+
+    .details {
+        padding: 150px 0 60px !important;
+    }
+
+    .details .detail-heading h3 {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .details .detail-heading p {
+        font-size: 15px;
+    }
+
+    .produuct-imgdetail .swiper-pagination-bullet {
+
+        background-color: #005571;
+    }
+
+    .detail-content .review-content>:nth-child(1) {
+        font-size: 15px;
+        padding: 10px 0 10px;
+    }
+
+    .detail-content .review-content strong {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.7rem;
+    }
+
+    .detail-content .review-content .detail-action a {
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+
+    .detail-content .review-content button {
+        padding: 12px 42px;
+        font-size: 15px;
+    }
+
+    .detail-content .delivery p {
+        font-size: 10px;
+    }
+
+    .detail-content .purchase p {
+        font-size: 10px;
+    }
+
+    .essence-friendly img {
+        width: 48px;
+        height: 42px;
+    }
+
+    .vegan-friendly .essence-friendly1 h3 {
+        font-size: 15px;
+    }
+
+    .Accordion-section .accordion-item .accordion-button {
+        font-size: 22px;
+        padding: 5px;
+    }
+
+    .Accordion-section .accordion-body h4 {
+        font-size: 28px;
+    }
+
+    .Accordion-section .accordion-body h3 {
+        font-size: 27px;
+    }
+
+    .product-panel .product-panel-text h1 {
+        font-size: 23px;
+    }
+
+    .product-panel .product-panel-text p {
+        font-size: 14px;
+    }
+
+    .our-body h3 {
+        font-size: 22px;
+    }
+
+    .our-body p {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    .product-content .web-head {
+        display: none !important;
+    }
+
+    .product .product-heading h1 {
+        font-size: 30px;
+        padding: 44px 0 14px;
+    }
+
+    .product .product-heading p {
+        font-size: 15px;
+    }
+
+    .product-buttons {
+        display: none !important;
+    }
+
+    .sortby {
+        display: none !important;
+    }
+
+    .canva-category {
+        display: block;
+    }
+
+    .cta-section {
+        display: none;
+    }
+
+    .product-seller {
+        background: none;
+
+    }
+
+    .product-card {
+        padding-bottom: 30px;
+    }
+    .product-content .detail-head p {
+        font-family: 'Eina2-light';
+        font-size: 10px;
+        color: #000;
+        margin-right: 2px;
+    }
+    .journaldetail-heading h1 {
+        font-size: 25px;
+        padding: 18px 0 18px;
+    }
+
+    .journaldetail-heading p {
+        font-size: 14px;
+    }
+
+    .journaldetail-heading {
+        padding: 20px;
+    }
+
+    .Journaldetails-banner {
+        height: 600px;
+    }
+
+    .journaldetail-Img {
+        background-image: var(--bgimg);
+        height: 315px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .journalPara-section .journal-para p {
+        font-size: 14px;
+    }
+
+    .journalPara-section .journal-para h1 {
+        font-size: 25px;
+        margin: 15px 0 15px;
+    }
+
+    .journal-para {
+        padding-bottom: 1rem;
+        padding: 20px;
+    }
+
+    .search {
+        padding: 70px 0 60px !important;
+    }
+
+    .search-canva {
+        width: 100% !important;
+        justify-content: center;
+        gap: 15px;
+        align-items: center;
+    }
+    .cart-banner h1 {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #323E48;
+        font-family: 'flatline';
+        font-size: 36px;
+        text-align: center;
+    }
+    .cart-content .cart-shipped h1 {
+       display: none;
+    }
+    .cart-content .cart-details img {
+        max-height: 50px;
+        width: 60px;
+    }
+    .cart-content .cart-para h3 {
+        font-size: 14px;
+    }
+    .cart-content .cart-para p {
+        font-size: 9px;
+    }
+    .cart-content .cart-details .cartaction {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+    .cart-content .cart-details .total {
+        display: none;
+    }
+    .cart-total {
+        padding: 25px;
+    }
+    .cart-total h1 {
+        font-size: 30px;
+    }
+    .cart-total .cartsub> :nth-child(1), .cart-total .cartsub> :nth-child(2) {
+        font-size: 16px;
+    }
+    .cart-total form .form-control {
+        padding: 15px 12px;
+        font-size: 9px;
+    }
+    .cart-total form .btn {
+        padding: 14px 22px;
+        font-size: 11px;
+    }
+    .cart-total .grand-total {
+        margin-top: 25px;
+    }
+    .cart-total .grand-total p {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .cart-total .grand-total h3 {
+        font-size: 25px;
+    }
+    .cart-total .proceed {
+        width: 100%;
+        padding: 14px;
+        margin-top: 25px;
+        font-size: 14px;
+    }
+    .cart-total .secure p {
+        margin-top: 25px;
+        font-size: 14px;
+    }
+    .contact .get-inTouch {
+        padding: 30px;
+    }
+    .contact .get-inTouch h3 {
+        font-size: 25px;
+    }
+    .contact .get-inTouch p {
+        font-size: 15px;
+        margin-top: 12px;
+    }
+    .contact .form-control {
+        font-size: 17px;
+        margin-top: 15px;
+        padding: 20px 20px;
+    }
+    .contact .block {
+        margin-top: 15px;
+        padding: 20px 20px;
+        font-size: 17px;
+    }
+    .contact .btn {
+        padding: 14px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    .contact .contact-info {
+        background: #F9F9F9;
+        padding: 30px 30px;
+    }
+    .contact .contact-info h3 {
+        font-size: 25px;
+    }
+    .contact .contact-info .para {
+        font-size: 14px;
+        padding: 15px 0 15px;
+    }
+    .contact .contact-details .sec {
+        font-size: 18px;
+        padding: 15px 0 15px;
+    }
+    .contact .contact-details p {
+        font-size: 16px;
+    }
+    .contact .contact-details a {
+        font-size: 16px;
+    }
+    .contact .contact-icons p {
+        font-size: 16px;
+        padding: 15px 0 15px;
+    }
+    .contact .contact-icons i {
+        font-size: 15px;
+        margin-right: 18px;
+    }
+    .contact .contact-icons {
+        padding-bottom: 0px;
+    }
+    .contact {
+        /* padding: 0 0 90px; */
+        background: url(../images/contactwave.png) no-repeat;
+        padding: 3.875rem 0 2rem;
+        margin-top: -2rem;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        z-index: 1;
+        position: relative;
+        background-size: contain;
+    }
+    .distribution {
+        padding: 3.875rem 0 3rem !important;
+    }
+
+    .thankcontent {
+        /* padding: 0 0 90px; */
+        background: url(../images/thankwave.png) no-repeat;
+        padding: 3.875rem 0 3rem;
+        margin-top: -1.4rem;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        z-index: 1;
+        position: relative;
+        background-size: contain;    
+}
+.thank-details {
+    padding: 20px;
+}
+.thank-details h1 {
+    font-size: 40px;
+}
+.thank-details .para {
+    font-size: 18px;
+    margin-top: 20px;
+}
+.thank-details h3 {
+    padding: 32px;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.thank-details p {
+    margin-top: 20px;
+    font-size: 12px;
+}
+.thank-details .btn {
+    padding: 11px 0px;
+    margin-top: 20px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.thank-total {
+    padding: 30px 20px;
+}
+.thank-total h3 {
+    font-size: 30px;
+}
+.thank-total .sub {
+    margin-top: 18px;
+}
+.thank-total .sub p {
+    font-size: 18px;
+}
+.thank-total .sub span {
+    font-size: 16px;
+}
+.thank-total .wrap {
+    margin-top: 20px;
+}
+.thank-total .wrap> :nth-child(1) {
+    font-size: 18px;
+}
+.thank-total .wrap> :nth-child(2) {
+    font-size: 17px;
+}
+.thank-total .wrap span {
+    font-size: 17px;
+}
+.thank-total .grandtotal {
+    margin-top: 20px;
+}
+.thank-total .grandtotal p {
+    font-size: 20px;
+}
+.thank-total .grandtotal h4 {
+    font-size: 26px;
+}
+.thank-total .btn {
+    padding: 14px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.ingredients-banner h1 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+    color: #323E48;
+    font-family: 'flatline';
+    font-size: 30px;
+    text-align: center;
+}
+.ingredients .ingredients-heading {
+    text-align: start;
+    padding: 20px 0 20px;
+}
+.ingredients .ingredients-heading h1{
+    font-size: 25px;
+    padding: 0 0px 0 0px !important;
+}
+.ingredients .web-head{
+    display: none !important;
+}
+.ingredients-circle {
+    padding: 0.75rem 0 !important;
+    /* gap: 72px; */
+}
+.ingredients-content {
+    padding: 20px 0 20px;
+}
+.ingredients-content .philosophy h3 {
+    font-size: 26px;
+}
+.ingredients-content .philosophy-para {
+    margin-top: 20px;
+    font-size: 15px;
+}
+.ingredients-content .philosophy-img {
+    height: 400px;
+    margin-top: 30px;
+}
+.ingredients-content .philosophy h4 {
+    font-size: 25px;
+    margin-top: 30px;
+}
+.ingredients-content .philosophy .efficacy-para {
+    font-size: 15px;
+    margin-top: 20px;
+}
+.ingredients-content .philosophy .para {
+    font-size: 15px;
+    margin: 20px 0 20px;
+}
+.ingredients-content .Ingredient-Glossary {
+    margin-top: 100px;
+}
+.a-section .col-lg-5, .col-lg-7 {
+    margin-top: 30px;
+}
+.ingredients-join{
+    display: block;
+}
+.ingredients-moblie{
+    display: block;
+}
+.faqs-heading p {
+    padding-top: 20px !important;
+    font-size: 15px !important;
+}
+.faqs-accordion .accordion-heading h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.faqs-accordion .accordion-body p {
+    font-size: 14px;
+}
+}
+
+
+
+@media screen and (max-width:576px) {
+    .our-body-img img {
+        height: 570px;
+        margin-top: -48%;
+        position: relative;
+        z-index: -1;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:476px) {
+    .our-body-img img {
+        height: 570px;
+        margin-top: -68%;
+        position: relative;
+        object-fit: cover;
+    }
+    .cart-content .cartaction1 {
+        font-size: 10px;
+        padding: 4px;
+    }
+    .contact {
+        /* padding: 0 0 90px; */
+        background: url(../images/contactwave.png) no-repeat;
+        padding: 3.875rem 0 2rem;
+        margin-top: -1rem;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        z-index: 1;
+        position: relative;
+        background-size: contain;
+    }
+
+}
+
+@media (max-width:426px) {
+    .our-body-img img {
+        height: 800px;
+        margin-top: -80%;
+        position: relative;
+        object-fit: cover;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width:399.98px) {
+    .Inspiration-content .instimages {
+        gap: 1rem;
+    }
+
+    .mobilecart .offcanvas {
+        padding: 15px;
+    }
+
+
+    .newlogo-Wrapper {
+        width: 100%;
+    }
+
+    .tooltiwrap {
+        justify-content: center;
+    }
+
+    .new-hover-logo img {
+        max-width: 45px;
+        object-fit: contain;
+    }
+
+    .new-hover-logo img:nth-child(2) {
+        max-width: 34px;
+    }
+
+    .new-hover-logo img:nth-child(3) {
+        max-width: 150px;
+    }
+
+    .tooltp {
+        margin-left: 0rem;
+    }
+
+    .tooltp.tooltp2 {
+        margin-left: -2.5rem;
+        width: 125px;
+    }
+
+    .tooltp.tooltp3 {
+        width: 140px;
+    }
+
+    .proPanelBg {
+        height: 200px;
+    }
+
+    .our-body-img img {
+        margin-top: -105%;
+        position: relative;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:376px) {
+    .our-body-img img {
+        margin-top: -104%;
+        position: relative;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:345px) {
+    .our-body-img img {
+        margin-top: -144%;
+        position: relative;
+        object-fit: cover;
+    }
+}
