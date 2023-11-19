@@ -178,12 +178,8 @@ function funct_template_redirect() {
         include(get_template_directory() . '/cart-template.php');
         exit; 
     }
-    if (is_page('thankyou')) {
+    if (is_order_received_page() ) {
         include(get_template_directory() . '/thank-you.php');
-        exit; 
-    }
-    if (is_page('checkout')) {
-        include(get_template_directory() . '/checkout.php');
         exit; 
     }
 }

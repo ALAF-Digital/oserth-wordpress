@@ -102,15 +102,15 @@ function get_delivery_charges() {
             <div class="col-lg-4">
     <div class="cart-total">
         <h1>Cart Totals</h1>
-
+        <?php $currency_code = get_woocommerce_currency(); ?>
         <div class="cartsub">
             <p>Subtotal</p>
-            <p>AED <?php echo WC()->cart->get_subtotal(); ?></p>
+            <p><?php echo $currency_code; ?> <?php echo WC()->cart->get_subtotal(); ?></p>
         </div>
 
         <div class="cartsub">
             <p>Delivery Charges</p>
-            <p>AED <?php echo get_delivery_charges(); ?></p>
+            <p><?php echo $currency_code; ?>  <?php echo get_delivery_charges(); ?></p>
         </div>
 
         <form action="">
@@ -120,7 +120,8 @@ function get_delivery_charges() {
 
         <div class="grand-total">
             <p>Grand Total</p>
-            <h3>AED <?php echo WC()->cart->get_total(); ?></h3>
+
+            <h3><?php echo WC()->cart->get_total(); ?></h3>
         </div>
 
         <a  href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="proceed btn">Proceed to checkout <i class="fa-solid fa-arrow-right ms-2"></i></a>
@@ -145,146 +146,68 @@ function get_delivery_charges() {
 
 
 
-    <!-- Best Seller -->
-    <section class="best-seller cart-product">
-        <img src="assets/images/Vector.png" class="img-fluid wave-line" alt="">
-        <div class="container-fluid">
-            <div class="seller-head text-center ">
-                <h1>Best Seller</h1>
-            </div>
-
-            <div class="row pro-row">
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <div class="seller-card">
-                        <figure>
-                            <div class="productImg">
-                                <img src="assets/images/homeproduct.png" class="img-fluid" alt="">
-                            </div>
-                            <ul class="badge-group">
-                                <li>
-                                    <p>Best<br>
-                                        Seller</p>
-                                </li>
-                                <li>
-                                    <span>pure</span>
-                                    <p>Vegan</p>
-                                    <span>one</span>
-                                </li>
-                                <li class="bg">
-                                    <img src="assets/images/leaf-icon.png" class="img-fluid" alt="">
-                                    <span>Natural</span>
-                                </li>
-                            </ul>
-                        </figure>
-
-                        <div class="seller-body">
-                            <a href="#">
-                                <h4 class="mb-3">Fortify Masque</h4>
-                            </a>
-                            <p class="mb-3">Lorem ipsum dolor sit amet consectetur.</p>
-                            <p class="mb-3">$ 55.36</p>
-                            <a href="#" class="btn">Add to cart <span class="ms-2">+</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <div class="seller-card">
-                        <!-- style="--bg:#6FCFEB;" -->
-                        <figure>
-                            <img src="assets/images/homeproduct1.png" class="img-fluid" alt="">
-
-                            <ul class="badge-group badge-group1">
-                                <li>
-                                    <p>Best<br>
-                                        Seller</p>
-                                </li>
-                                <li>
-                                    <span>pure</span>
-                                    <p>Vegan</p>
-                                    <span>one</span>
-                                </li>
-
-                            </ul>
-                        </figure>
-
-                        <div class="seller-body">
-                            <a href="#">
-                                <h4 class="mb-3">Fortify Masque</h4>
-                            </a>
-                            <p class="mb-3">Lorem ipsum dolor sit amet consectetur.</p>
-                            <p class="mb-3">$ 55.36</p>
-                            <a href="#" class="btn">Add to cart <span class="ms-2">+</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <div class="seller-card">
-                        <figure>
-                            <img src="assets/images/homeproduct2.png" class="img-fluid" alt="">
-
-                            <ul class="badge-group badge-group2">
-                                <li>
-                                    <p>Best<br>
-                                        Seller</p>
-                                </li>
-                                <li>
-                                    <span>pure</span>
-                                    <p>Vegan</p>
-                                    <span>one</span>
-                                </li>
-                                <li class="bg">
-                                    <img src="assets/images/leaficon1.png" class="img-fluid" alt="">
-                                    <span>Natural</span>
-                                </li>
-                            </ul>
-                        </figure>
-                        <div class="seller-body">
-                            <a href="#">
-                                <h4 class="mb-3">Fortify Masque</h4>
-                            </a>
-                            <p class="mb-3">Lorem ipsum dolor sit amet consectetur.</p>
-                            <p class="mb-3">$ 55.36</p>
-                            <a href="#" class="btn">Add to cart <span class="ms-2">+</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <div class="seller-card">
-                        <figure>
-                            <img src="assets/images/homeproduct3.png" class="img-fluid" alt="">
-
-                            <ul class="badge-group badge-group3">
-                                <li>
-                                    <p>Best<br>
-                                        Seller</p>
-                                </li>
-                                <li>
-                                    <span>pure</span>
-                                    <p>Vegan</p>
-                                    <span>one</span>
-                                </li>
-
-                            </ul>
-                        </figure>
-                        <div class="seller-body">
-                            <a href="#">
-                                <h4 class="mb-3">Fortify Masque</h4>
-                            </a>
-                            <p class="mb-3">Lorem ipsum dolor sit amet consectetur.</p>
-                            <p class="mb-3">$ 55.36</p>
-                            <a href="#" class="btn">Add to cart <span class="ms-2">+</span></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="discover">
-                <a href="#" class="btn">Discover More</a>
-            </div>
+   <!-- Best Seller -->
+<section class="best-seller">
+    <img src="<?php echo get_template_directory_uri() . '/images/Vector.png' ?>" class="img-fluid wave-line" alt="">
+    <div class="container-fluid">
+        <div class="seller-head text-center">
+            <h1>Best Seller</h1>
         </div>
-    </section>
-    <!-- Best Seller End-->
+
+        <div class="row pro-row">
+            <?php
+            // the query
+            $args = array(
+                'post_type'      => 'product',
+                'posts_per_page' => 4,
+            );
+
+            $the_query = new WP_Query($args);
+
+            if ($the_query->have_posts()) :
+                while ($the_query->have_posts()) : $the_query->the_post();
+                    global $product; // Make sure to use global $product
+
+                    ?>
+                    <div class="col-lg-3 col-sm-6 col-6">
+                        <div class="seller-card">
+                            <figure>
+                                <div class="productImg">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" alt="">
+                                </div>
+
+                                <ul class="badge-group">
+                                    <li>
+                                        <p>Best<br>
+                                            Seller</p>
+                                    </li>
+                                    <!-- Add other badges or labels as needed -->
+                                </ul>
+                            </figure>
+
+                            <div class="seller-body">
+                                <a href="<?php the_permalink(); ?>">
+                                    <h4 class="mb-3"><?php the_title(); ?></h4>
+                                </a>
+                                <p class="mb-3"><?php echo get_the_excerpt(); ?></p>
+                                <p class="mb-3"><?php echo $product->get_price_html(); ?></p>
+                                <a href="<?php echo esc_url(get_permalink()); ?>" class="btn">Add to cart <span
+                                            class="ms-2">+</span></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile;
+                wp_reset_postdata(); // Reset the post data after the loop
+            endif;
+            ?>
+        </div>
+
+        <div class="discover">
+            <a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>" class="btn">Discover More</a>
+        </div>
+    </div>
+</section>
+<!-- Best Seller End-->
 
 
     <!-- Mobile card -->
