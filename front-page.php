@@ -132,70 +132,61 @@
 
 
 <!-- Best Seller -->
-<section class="best-seller ">
+<section class="best-seller">
     <img src="<?php echo get_template_directory_uri() . '/images/Vector.png' ?>" class="img-fluid wave-line" alt="">
     <div class="container-fluid">
-        <div class="seller-head text-center ">
+        <div class="seller-head text-center">
             <h1>Best Seller</h1>
         </div>
 
         <div class="row pro-row">
-        <?php
+            <?php
             // the query
-            $the_query = new WP_Query(array(
-               'post_type'  => 'product',
-               'posts_per_page' => 4,
+            $args = array(
+                'post_type'      => 'product',
+                'posts_per_page' => 4,
+            );
 
-            ));
+            $the_query = new WP_Query($args);
 
             if ($the_query->have_posts()) :
-               while ($the_query->have_posts()) : $the_query->the_post();
-                  $product = wc_get_product(get_the_ID());
-            ?>
-            <div class="col-lg-3 col-sm-6 col-6">
-                <div class="seller-card">
-                    <figure>
-                        <div class="productImg">
-                            <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid" alt="">
-                        </div>
+                while ($the_query->have_posts()) : $the_query->the_post();
+                    global $product; // Make sure to use global $product
 
-                        <ul class="badge-group">
-                            <li>
-                                <p>Best<br>
-                                    Seller</p>
-                            </li>
-                            <li>
-                                <span>pure</span>
-                                <p>Vegan</p>
-                                <span>one</span>
-                            </li>
-                            <li class="bg">
-                                <img src="<?php echo get_template_directory_uri() . '/images/leaf-icon.png' ?>" class="img-fluid" alt="">
-                                <span>Natural</span>
-                            </li>
-                        </ul>
-                    </figure>
+                    ?>
+                    <div class="col-lg-3 col-sm-6 col-6">
+                        <div class="seller-card">
+                            <figure>
+                                <div class="productImg">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" alt="">
+                                </div>
+
+                                <ul class="badge-group">
+                                    <li>
+                                        <p>Best<br>
+                                            Seller</p>
+                                    </li>
+                                    <!-- Add other badges or labels as needed -->
+                                </ul>
+                            </figure>
 
                     <div class="seller-body">
-                        <a href="<?php the_permalink(); ?>">
+                        <a href="product-details.html">
                             <h4 class="mb-3"><?php the_field('collection') ?></h4>
                         </a>
                         <p class="mb-3"><?php echo the_excerpt() ?></p>
                         <p class="mb-3">$ 55.36</p>
-                        <a href="<?php the_permalink(); ?>" class="btn">Add to cart <span class="ms-2">+</span></a>
+                        <a href="product-details.html" class="btn">Add to cart <span class="ms-2">+</span></a>
                     </div>
                 </div>
             </div>
             <?php endwhile;
             endif;
-            wp_reset_query();
             ?>
-          
-
         </div>
 
         <div class="discover">
-            <a href="product.html" class="btn">Discover More</a>
+            <a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>" class="btn">Discover More</a>
         </div>
     </div>
 </section>

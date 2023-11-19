@@ -27,6 +27,28 @@ function load_js()
 
 add_action('wp_enqueue_scripts', 'load_js');
 
+function enqueue_cart_scripts() {
+    
+    if (function_exists('is_woocommerce') && is_woocommerce()) {
+        wp_enqueue_script('wc-add-to-cart', plugins_url('woocommerce/assets/js/frontend/add-to-cart.min.js'), array('jquery'), false, true);
+         wp_enqueue_script('cart-js', get_template_directory_uri() . '/js/woo-cutom-cart.js', array('jquery'), wp_get_theme()->get('Version'), true);
+
+        // Localize the script with new data
+        $localized_params = array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'wc_ajax_url' => admin_url('admin-ajax.php'),
+            'i18n_view_cart' => esc_attr__('View cart', 'woocommerce'),
+            'cart_url' => wc_get_cart_url(),
+            'is_cart' => is_cart(),
+            'cart_redirect_after_add' => get_option('woocommerce_cart_redirect_after_add'),
+            'loading' => esc_attr__('Updating cart...', 'woocommerce'),
+        );
+
+        wp_localize_script('wc-add-to-cart', 'wc_add_to_cart_params', apply_filters('wc_add_to_cart_params', $localized_params));
+    }
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_cart_scripts');
 
 
 
@@ -118,3 +140,47 @@ function mytheme_add_woocommerce_support()
 }
 
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
+
+
+
+add_action('wp_ajax_add_to_cart', 'add_to_cart_ajax_callback');
+add_action('wp_ajax_nopriv_add_to_cart', 'add_to_cart_ajax_callback');
+
+function add_to_cart_ajax_callback() {
+    $product_id = isset($_POST['product_id']) ? absint($_POST['product_id']) : 0;
+    $quantity = isset($_POST['quantity']) ? wc_stock_amount(sanitize_text_field($_POST['quantity'])) : 1;
+
+    if ($product_id > 0) {
+        // Add the product to the cart with the specified quantity
+        WC()->cart->add_to_cart($product_id, $quantity);
+
+        // Display a notice
+        wc_add_notice('Product added to the cart successfully!', 'success');
+
+        // Return the updated cart fragments for frontend updates
+        ob_start();
+        woocommerce_mini_cart();
+        $mini_cart = ob_get_clean();
+
+        wp_send_json_success(array(
+            'message' => 'Product added to the cart successfully!',
+            'mini_cart' => $mini_cart,
+        ));
+    } else {
+        wp_send_json_error('Invalid product ID');
+    }
+}
+
+function funct_template_redirect() {
+    // Check if it's cart page
+    if (is_page('cart')) {
+
+        include(get_template_directory() . '/cart-template.php');
+        exit; 
+    }
+    if (is_order_received_page() ) {
+        include(get_template_directory() . '/thank-you.php');
+        exit; 
+    }
+}
+add_action('template_redirect', 'funct_template_redirect');

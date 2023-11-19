@@ -3,11 +3,11 @@
 get_header('secondary');
 
 $product = wc_get_product(get_the_ID());
-
 ?>
 
 <section class="details">
 	<div class="container-fluid">
+
 		<div class="detail-head d-flex align-items-center ms-3">
 			<p>Home</p>
 			<i class="fa-solid fa-greater-than"></i>
@@ -15,26 +15,37 @@ $product = wc_get_product(get_the_ID());
 			<i class="fa-solid fa-greater-than"></i>
 			<p><?php echo the_title() ?></p>
 		</div>
+
 	</div>
 
 
 	<div class="container">
 		<div class="detail-heading text-center mt-3">
+			<div class="container-fluid notices-container">
+	        <!-- This is where WooCommerce notices will be displayed -->
+	    </div>
 			<h3><?php echo the_title() ?></h3>
 			<p><?php echo the_excerpt() ?></p>
+			
 		</div>
 
 		<div class="row mt-5">
 			<div class="col-lg-1 ">
 				<div class="detail-side">
 					<figure>
-					<a href="#"> <img src="<?php echo get_template_directory_uri() . '/images/productview.png'?>" alt=""></a>
-					<a href="#"> <img src="<?php echo get_template_directory_uri() . '/images/productview.png'?>" alt=""></a>
-					<a href="#"> <img src="<?php echo get_template_directory_uri() . '/images/productview.png'?>" alt=""></a>
-					<a href="#"> <img src="<?php echo get_template_directory_uri() . '/images/productview.png'?>" alt=""></a>
-					<a href="#"> <img src="<?php echo get_template_directory_uri() . '/images/productview.png'?>" alt=""></a>
-						
-
+					<?php
+                        $attachment_ids = $product->get_gallery_image_ids();
+                        if ($attachment_ids) {
+                            foreach ($attachment_ids as $attachment_id) {
+                                echo '<a href="' . esc_url(wp_get_attachment_image_url($attachment_id, 'full')) . '" class="woocommerce-product-gallery__image">';
+                                echo wp_get_attachment_image($attachment_id, 'woocommerce_thumbnail', false, array('class' => 'img-fluid'));
+                                echo '</a>';
+                            }
+                        } else {
+                            // Display placeholder image if no gallery images are available
+                            echo '<a href="#"> <img src="' . get_template_directory_uri() . '/images/productview.png" alt=""></a>';
+                        }
+                        ?>
 					</figure>
 				</div>
 			</div>
@@ -46,7 +57,10 @@ $product = wc_get_product(get_the_ID());
 							<div class="seller-card proDetailImg ">
 								<figure>
 									<div class="promainImg">
-										<img src="<?php echo get_template_directory_uri() . '/images/prodetaillarge.png' ?>" class="img-fluid" alt="">
+										<?php $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($product->get_id()), 'single-post-thumbnail');
+										 	$image_url = $product_image[0]; 
+									 	?>
+										<img src="<?php echo esc_url($image_url); ?>" class="img-fluid" alt="">
 									</div>
 									<ul class="badge-group product-badge">
 										<li>
@@ -99,28 +113,68 @@ $product = wc_get_product(get_the_ID());
 			<div class="col-lg-5">
 				<div class="detail-content">
 					<div class="details-buttons d-flex">
-						<button class="me-3">1000ml</button>
-						<button>300ml</button>
+					    <?php
+					    $attributes = $product->get_attributes();
+
+					    foreach ($attributes as $attribute) {
+					        $attribute_name = $attribute->get_name();
+					        $attribute_values = $attribute->get_options();
+
+					        if ($attribute_name === 'Size' || $attribute_name === 'Capacity') {
+					            foreach ($attribute_values as $value) {
+					                echo '<button class="me-3">' . esc_html($value) . '</button>';
+					            }
+					        }
+					    }
+					    ?>
 					</div>
-					<h3>AED <?php echo $product->get_sale_price() ?></h3>
+
+					<?php $currency_code = get_woocommerce_currency(); ?>
+					<h3><?php echo $currency_code; ?>
+					    <?php
+					    $sale_price = $product->get_sale_price();
+					    $regular_price = $product->get_price();
+
+					    if (!empty($sale_price) && $sale_price != $regular_price) {
+					        echo $sale_price;
+					    } else {
+					        echo $regular_price;
+					    }
+					    ?>
+					</h3>
 
 					<div class="review-icon d-flex align-items-center">
-						<a href="#"><i class="fa-regular fa-star"></i></a>
-						<a href="#"><i class="fa-regular fa-star"></i></a>
-						<a href="#"><i class="fa-regular fa-star"></i></a>
-						<a href="#"><i class="fa-regular fa-star"></i></a>
-						<a href="#"><i class="fa-regular fa-star"></i></a>
-						<p>(Review)</p>
+					    <?php
+					    // Get the average rating and total number of reviews for the product
+					    $average_rating = $product->get_average_rating();
+					    $review_count = $product->get_review_count();
+					    
+					    for ($i = 1; $i <= 5; $i++) {
+					        if ($i <= $average_rating) {
+					            echo '<a href="#"><i class="fa-regular fa-star"></i></a>';
+					        } else {
+					            echo '<a href="#"><i class="fa-regular fa-star"></i></a>';
+					        }
+					    }
+					    
+					    // Output the review count
+					    echo '<p>(' . $review_count . ' Reviews)</p>';
+					    ?>
 					</div>
 
 					<div class="review-content">
 						<p><?php echo the_content() ?></p>
 						<p><strong>HAIR TYPE:</strong> <span><?php the_field('hair_type') ?></span></p>
 						<p><strong>RESULTS:</strong><span><?php the_field('results') ?> </span></p>
-						<div class="detail-action">
-							<a href="#">+ 01 -</a>
-							<button>Add to Cart <i class="fa-solid fa-bag-shopping ms-1"></i></button>
+						<div class="detail-container">
+
 						</div>
+						<div class="detail-action">
+						    <a href="#" class="quantity-control" data-action="decrease">-</a>
+						    <input type="number" name="quantity" value="1" class="quantity-input" />
+						    <a href="#" class="quantity-control" data-action="increase">+</a>
+						</div>
+ 						<button class="add-to-cart-btn" data-product-id="<?php echo get_the_ID(); ?>">Add to Cart <i class="fa-solid fa-bag-shopping ms-1"></i></button>
 						<div class="delivery d-flex align-items-center">
 							<img src="<?php echo get_template_directory_uri() . ' /images/truck.png' ?>" class="img-fluid me-1" alt="">
 							<p><?php the_field('delivery') ?></p>
