@@ -69,20 +69,19 @@
         <div class="row mt-4">
 
             <div class="col-md-4 col-6 ">
-                <?php
-                if (have_rows('essence_of_oserth')) :
-                    while (have_rows('essence_of_oserth')) : the_row();
-                        // Get sub field values.
+            <?php
+            if (have_rows('essence_of_oserth_content', 'option')) :
+                while (have_rows('essence_of_oserth_content' , 'option')) : the_row();
+                    // Get sub field values.
 
-                        $Image = get_sub_field('image');
-                        $heading = get_sub_field('heading');
-                        $para = get_sub_field('paragraph');
-
-                ?>
+                    $image = get_sub_field('image');
+                    $head = get_sub_field('heading');
+                    $desc = get_sub_field('description');
+            ?>
                         <div class="essence-friendly mb-5">
-                            <img src="<?php echo $Image ?>" class="img-fluid" alt="">
-                            <h3><?php echo $heading ?></h3>
-                            <p class="friendly-para"><?php echo $para ?></p>
+                            <img src="<?php echo $image ?>" class="img-fluid" alt="">
+                            <h3><?php echo $head ?></h3>
+                            <p class="friendly-para"><?php echo $desc ?></p>
                         </div>
                 <?php endwhile;
                 endif;
@@ -104,20 +103,19 @@
             wp_reset_query(); ?>
 
             <div class="col-md-4 col-6  text-end">
-                <?php
-                if (have_rows('essence_of_oserth_right')) :
-                    while (have_rows('essence_of_oserth_right')) : the_row();
-                        // Get sub field values.
+            <?php
+            if (have_rows('essence_of_oserth_content_right', 'option')) :
+                while (have_rows('essence_of_oserth_content_right' , 'option')) : the_row();
+                    // Get sub field values.
 
-                        $Image = get_sub_field('image');
-                        $heading = get_sub_field('heading');
-                        $para = get_sub_field('paragraph');
-
-                ?>
+                    $image = get_sub_field('image');
+                    $head = get_sub_field('heading');
+                    $desc = get_sub_field('description');
+            ?>
                         <div class="essence-friendly mb-5">
-                            <img src="<?php echo $Image ?>" class="img-fluid" alt="">
-                            <h3><?php echo $heading ?></h3>
-                            <p class="friendly-para"><?php echo $para ?></p>
+                            <img src="<?php echo $image ?>" class="img-fluid" alt="">
+                            <h3><?php echo $head ?></h3>
+                            <p class="friendly-para"><?php echo $desc ?></p>
                         </div>
                 <?php endwhile;
                 endif;
@@ -179,12 +177,12 @@
                     </figure>
 
                     <div class="seller-body">
-                        <a href="product-details.html">
+                        <a href="<?php the_permalink(); ?>">
                             <h4 class="mb-3"><?php the_field('collection') ?></h4>
                         </a>
                         <p class="mb-3"><?php echo the_excerpt() ?></p>
                         <p class="mb-3">$ 55.36</p>
-                        <a href="product-details.html" class="btn">Add to cart <span class="ms-2">+</span></a>
+                        <a href="<?php the_permalink(); ?>" class="btn">Add to cart <span class="ms-2">+</span></a>
                     </div>
                 </div>
             </div>

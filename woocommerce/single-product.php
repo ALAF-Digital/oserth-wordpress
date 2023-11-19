@@ -142,38 +142,44 @@ $product = wc_get_product(get_the_ID());
 	<div class="container-fluid">
 		<div class="row ">
 			<div class="col-lg-6 d-flex justify-content-between text-center ">
+			<?php
+            if (have_rows('essence_of_oserth_content', 'option')) :
+                while (have_rows('essence_of_oserth_content' , 'option')) : the_row();
+                    // Get sub field values.
+
+                    $image = get_sub_field('image');
+                    $head = get_sub_field('heading');
+                    // $desc = get_sub_field('description');
+            ?>
 				<div class="essence-friendly essence-friendly1">
-					<img src="assets/images/Group (1).png" class="img-fluid" alt="">
-					<h3>Animal Friendly</h3>
+					<img src="<?php echo $image ?>" class="img-fluid" alt="">
+					<h3><?php echo $head ?></h3>
 
 				</div>
-				<div class="essence-friendly essence-friendly1">
-					<img src="assets/images/Group.png" class="img-fluid" alt="">
-					<h3>Vegan Friendly</h3>
-
-				</div>
-				<div class="essence-friendly essence-friendly1">
-					<img src="assets/images/Group (2).png" class="img-fluid" alt="">
-					<h3>Clean Beauty</h3>
-				</div>
+				<?php endwhile;
+                endif;
+                wp_reset_query(); ?>
 			</div>
 
 			<div class="col-lg-6 d-flex justify-content-between text-center ">
+			<?php
+            if (have_rows('essence_of_oserth_content_right', 'option')) :
+                while (have_rows('essence_of_oserth_content_right' , 'option')) : the_row();
+                    // Get sub field values.
+
+                    $image = get_sub_field('image');
+                    $head = get_sub_field('heading');
+                    // $desc = get_sub_field('description');
+            ?>
 				<div class="essence-friendly essence-friendly1">
-					<img src="assets/images/Green.png" class="img-fluid" alt="">
-					<h3>I’m Green</h3>
+				<img src="<?php echo $image ?>" class="img-fluid" alt="">
+					<h3><?php echo $head ?></h3>
 
 				</div>
-				<div class="essence-friendly essence-friendly1">
-					<img src="assets/images/Sun.png" class="img-fluid" alt="">
-					<h3>Made By Sun</h3>
-
-				</div>
-				<div class="essence-friendly essence-friendly1">
-					<img src="assets/images/Recyclable.png" class="img-fluid" alt="">
-					<h3>Recyclable</h3>
-
-				</div>
+				<?php endwhile;
+                endif;
+                wp_reset_query(); ?>
+				
 			</div>
 		</div>
 	</div>

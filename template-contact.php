@@ -22,10 +22,10 @@
 
 
     <section class="Journaldetails">
-        <div class="cart-banner thankbanner" style="--bgimg:url(../images/contactus.png)">
+        <div class="cart-banner thankbanner" style="--bgimg:url('<?php the_post_thumbnail_url(); ?>')">
             <div class="container">
                 <div class="col-md-3">
-                    <h1>Contact us</h1>
+                    <h1><?php the_title()?></h1>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
     </section>
 
     <section class="cart-content contact">
-        <img src="assets/images/faqsvector.png" class="img-fluid wave-line" alt="">
+        <img src="<?php echo get_template_directory_uri() . '/images/faqsvector.png" class="img-fluid wave-line'?>" alt="">
 
         <div class="container-fluid">
             <div class="row">
@@ -42,7 +42,8 @@
                         <h3>Get in touch with us</h3>
                         <p>Questions, advice, ideas. Your voice matters, make it heard here</p>
 
-                        <form action="">
+                        <?php echo do_shortcode('[contact-form-7 id="8f84f3d" title="Contact us"]')?>
+                        <!-- <form action="">
                             <input type="text" class="text form-control" placeholder="Name*" required>
 
 
@@ -69,21 +70,21 @@
 
                             <button class="btn" type="submit">Send Message<i
                                     class="fa-solid fa-arrow-right ms-2"></i></button>
-                        </form>
+                        </form> -->
                     </div>
 
                 </div>
 
                 <div class="col-lg-4">
                     <div class="contact-info">
-                        <h3>Contact us</h3>
-                        <p class="para">Got a question or need some help? Get in touch. We'd love to hear from you.</p>
+                        <h3><?php the_field('contact')?></h3>
+                        <p class="para"><?php the_field('para')?></p>
 
                         <div class="contact-details">
                             <p class="sec">Contact :</p>
-                            <p>Tel: <a href="#">+971 4 1234 567</a></p>
-                            <p>Whatsapp: <a href="#">+971 4 1234 567</a></p>
-                            <p class="email">Email: <a href="#">info@oserth.com</a></p>
+                            
+                            <?php the_content()?>
+                            <p class="email"></a></p>
                         </div>
 
                         <div class="contact-icons">

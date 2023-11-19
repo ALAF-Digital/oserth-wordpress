@@ -18,14 +18,16 @@
 
     <!-- SErach ARea  -->
     <div class="offcanvas offcanvas-top" tabindex="-1" id="searchTop" aria-labelledby="searchTopLabel">
-        <div class="offcanvas-body">
-            <form>
+        <div class="offcanvas-body" >
+        <?php get_search_form(); ?>
+            <!-- <form>
+            
                 <div class="input-group">
                     <a href="search.html"> <i class="fa-solid fa-magnifying-glass "></i></a>
                     <input type="text" class="form-control" placeholder="SEARCH">
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </form>
+            </form> -->
         </div>
     </div>
     <!-- search area end -->
